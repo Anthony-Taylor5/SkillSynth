@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/ssLogo.svg" />
+
+    <!-- Google Fonts Used -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skill Synth</title>
+
+    <!-- your original background -->
+    <style>
+      html, body {
+        min-height: 100%;
+        margin: 0;
+        background: linear-gradient(to bottom, #6a0dad, #014f86);
+        background-attachment: fixed;
+        background-size: cover;
+        font-family: 'Orbitron', sans-serif;
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100%;
+        background: transparent;
+        overflow-x: hidden;
+      }
+    </style>
+
+    <!-- subtle purple-blue retro grid with wave motion -->
+    <style>
+      :root { --grid: 40px; }
+
+      .retro-overlay {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        mix-blend-mode: screen;
+        opacity: 0.70; /* much softer visibility */
+        animation: hueDrift 5s ease-in-out infinite;
+      }
+
+      .retro-overlay::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          /* vertical and horizontal grid lines */
+          linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px),
+          linear-gradient(0deg, rgba(255,255,255,.06) 1px, transparent 1px),
+          /* underlying gradient color flow */
+          radial-gradient(1000px 700px at 25% 25%, rgba(255, 0, 255, 0.12), transparent 70%),
+          radial-gradient(900px 800px at 75% 75%, rgba(0, 200, 255, 0.12), transparent 70%),
+          radial-gradient(800px 600px at 50% 50%, rgba(120, 0, 255, 0.10), transparent 70%);
+        background-size:
+          var(--grid) var(--grid),
+          var(--grid) var(--grid),
+          100% 100%, 100% 100%, 100% 100%;
+        animation: oceanWave 22s ease-in-out infinite alternate;
+      }
+
+      /* slow hue breathing between violet/blue tones */
+      @keyframes hueDrift {
+        0%   { filter: hue-rotate(0deg) saturate(1.2); }
+        50%  { filter: hue-rotate(25deg) saturate(1.4); }
+        100% { filter: hue-rotate(0deg) saturate(1.2); }
+      }
+
+      /* flowing wave-like motion */
+      @keyframes oceanWave {
+        0% {
+          background-position:
+            0 0, 0 0,
+            0% 0%, 0% 0%, 0% 0%;
+        }
+        25% {
+          background-position:
+            5px 10px, -5px 15px,
+            5% 5%, 10% 5%, 8% 10%;
+        }
+        50% {
+          background-position:
+            10px 20px, -10px 25px,
+            10% 10%, 20% 10%, 15% 20%;
+        }
+        75% {
+          background-position:
+            5px 10px, -5px 15px,
+            15% 5%, 10% 10%, 5% 5%;
+        }
+        100% {
+          background-position:
+            0 0, 0 0,
+            0% 0%, 0% 0%, 0% 0%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- soft wave grid overlay -->
+    <div class="retro-overlay"></div>
+
+    <!-- React root -->
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

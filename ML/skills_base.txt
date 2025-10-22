@@ -1,0 +1,32 @@
+{
+    "Programming Languages": [
+    "JavaScript", "TypeScript", "Python", "Java", "C", "C++", "C#", "Go", "Rust", "PHP"
+  ],
+  "Web Frontend": [
+    "React", "Next.js", "Vue", "Svelte", "Tailwind CSS", "Redux", "Vite", "Webpack", "CSS", "HTML"
+  ],
+  "Web Backend": [
+    "Node.js", "Express", "Django", "Flask", "Spring Boot", ".NET", "FastAPI", "GraphQL", "REST APIs", "gRPC"
+  ],
+  "Databases": [
+    "PostgreSQL", "MySQL", "SQLite", "MongoDB", "Redis", "Elasticsearch", "Prisma", "ORMs", "Data Modeling", "SQL"
+  ],
+  "DevOps & Cloud": [
+    "Docker", "Kubernetes", "AWS", "GCP", "Azure", "CI/CD", "Terraform", "Linux Admin", "Nginx", "Monitoring"
+  ],
+  "Operating Systems": [
+    "Linux", "Windows Server", "macOS", "Shell Scripting", "Systemd", "Permissions & ACL", "File Systems", "Processes"
+  ],
+  "Networking": [
+    "TCP/IP", "DNS", "HTTP/HTTPS", "Routing", "Switching", "VPN", "Wireshark", "Firewalls", "Load Balancing", "NAT"
+  ],
+  "Cybersecurity": [
+    "Threat Modeling", "Vuln Scanning", "OWASP Top 10", "SIEM", "IAM", "Pen Testing Basics", "Incident Response", "Zero Trust"
+  ],
+  "Data & ML": [
+    "NumPy", "Pandas", "Matplotlib", "scikit-learn", "PyTorch", "TensorFlow", "ETL", "Feature Engineering", "Experimentation"
+  ],
+  "Mobile & Tools": [
+    "React Native", "Flutter", "Swift", "Kotlin", "Android", "iOS", "Git", "GitHub Actions", "Jest", "Playwright"
+  ]
+}
