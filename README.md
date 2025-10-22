@@ -63,7 +63,7 @@ SkillSynth solves these pain points through adaptive learning intelligence and a
 
 - **Frontend:** React / Next.js / TailwindCSS  
 - **Backend:** Node.js / Express / Python (FastAPI)  
-- **Database:** MongoDB / PostgreSQL  
+- **Database:** Pinecone / PostgreSQL  
 - **AI Integration:** OpenAI API, HuggingFace models, or similar  
 - **Deployment:** Docker, Vercel, or AWS  
 
