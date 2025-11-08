@@ -391,7 +391,7 @@ export default function Projects() {
                   >
                     <option value="">Select Category</option>
                     {categoryOptions.map((c) => (
-                      <option key={c} value={c}>
+                      <option key={c} value={c} className="text-black bg-white">
                         {SKILL_CATALOG[c].label}
                       </option>
                     ))}
@@ -405,7 +405,7 @@ export default function Projects() {
                   >
                     <option value="">{skillCategory ? "Select Skill" : "Pick Category First"}</option>
                     {skillOptions.map((s) => (
-                      <option key={s} value={s}>
+                      <option key={s} value={s} className="text-black bg-white">
                         {s}
                       </option>
                     ))}

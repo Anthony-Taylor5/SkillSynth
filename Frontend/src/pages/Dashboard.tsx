@@ -190,24 +190,25 @@ export default function Dashboard() {
       </section>
 
       {/* My Groups / Projects */}
-      <section className="space-y-4 overflow-visible">
-        <h2 className="text-2xl md:text-3xl font-['Rajdhani'] text-white/95">My Groups / Projects</h2>
+      <section className="space-y-4 relative z-0">
+        <h2 className="text-2xl md:text-3xl font-['Rajdhani'] text-white/95">
+          My Groups / Projects
+        </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
           {/* Owned */}
-          <div className="space-y-3">
+          <div className="flex-1 space-y-3">
             <h3 className="text-lg font-['Rajdhani'] text-white/80">Owned</h3>
             {owned.length === 0 ? (
               <Card>
                 <Empty text="You don't own any projects yet" hint="Create one from Projects." />
               </Card>
             ) : (
-              <div className="grid gap-4">
+              <div className="flex flex-col gap-4">
                 {owned.map((s) => (
                   <SpaceCard key={s.id} s={s}>
                     <div className="flex items-center gap-2">
-                     <ButtonFrame onClick={() => setPreview(s)} label="View Details" />
-                      
+                      <ButtonFrame onClick={() => setPreview(s)} label="View Details" />
                     </div>
                   </SpaceCard>
                 ))}
@@ -215,15 +216,19 @@ export default function Dashboard() {
             )}
           </div>
 
-          {/* Member-only */}
-          <div className="space-y-3">
+          {/* Member Only */}
+          <div className="flex-1 space-y-3">
             <h3 className="text-lg font-['Rajdhani'] text-white/80">Member Only</h3>
             <Card>
-              <Empty text="Not a member of any groups yet" hint="Request to join from Projects/Groups." />
+              <Empty
+                text="Not a member of any groups yet"
+                hint="Request to join from Projects/Groups."
+              />
             </Card>
           </div>
         </div>
       </section>
+
 
       {/* Toast */}
       {toast && (
@@ -379,14 +384,16 @@ function SpaceCard({ s, children }: { s: Space; children: React.ReactNode }) {
     </article>
   );
 }
-
 function Card({ children }: { children: React.ReactNode }) {
   return (
-    <div className="relative rounded-2xl border border-dashed border-white/15 bg-white/[0.04] backdrop-blur-md p-7 overflow-visible">
+    <div className="relative isolate rounded-2xl border border-dashed border-white/15 
+                    bg-white/[0.04] backdrop-blur-md p-7 shadow-[0_8px_25px_rgba(0,0,0,0.35)] 
+                    overflow-hidden z-0">
       {children}
     </div>
   );
 }
+
 
 function Empty({ text, hint }: { text: string; hint?: string }) {
   return (

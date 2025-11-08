@@ -84,7 +84,7 @@ export default function Profile() {
       showToast("✅ Profile saved!");
     } catch (err) {
       console.error("Error saving profile:", err);
-      showToast("❌ Failed to save profile");
+      //showToast("❌ Failed to save profile");
     }
   };
 
@@ -109,7 +109,7 @@ export default function Profile() {
       }, 250);
     } catch (e) {
       console.error("Error adding skill:", e);
-      showToast("Error adding skill");
+      //showToast("Error adding skill");
     }
   };
 
@@ -284,7 +284,7 @@ export default function Profile() {
             >
               <option value="">Select a category</option>
               {Object.keys(SKILL_CATALOG).map((cat) => (
-                <option key={cat} value={cat}>
+                <option key={cat} value={cat} className="text-black bg-white">
                   {cat}
                 </option>
               ))}
@@ -303,7 +303,7 @@ export default function Profile() {
                 SKILL_CATALOG[selectedCategory]
                   .filter((n) => !taken.has(n))
                   .map((n) => (
-                    <option key={n} value={n}>
+                    <option key={n} value={n} className="text-black bg-white">
                       {n}
                     </option>
                   ))}

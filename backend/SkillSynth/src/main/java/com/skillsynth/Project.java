@@ -21,7 +21,7 @@ public class Project {
     )
     private List<Skill> recommendedSkills;
 
-    private String dateRange;
+    @Column(length = 2000) // allow long descriptions
     private String projectDescription;
 
     private int experienceLevel;
@@ -30,10 +30,9 @@ public class Project {
     public Project(){}
 
 
-    public Project(String name, List<Skill> recommendedSkills, String dateRange, String projectDescription, int experienceLevel) {
+    public Project(String name, List<Skill> recommendedSkills,  String projectDescription, int experienceLevel) {
         this.name = name;
         this.recommendedSkills = recommendedSkills;
-        this.dateRange = dateRange;
         this.projectDescription = projectDescription;
         this.experienceLevel = experienceLevel;
     }
@@ -66,9 +65,6 @@ public class Project {
     }
 
     public void setRecommendedSkills(List<Skill> recommendedSkills){ this.recommendedSkills = recommendedSkills;}
-
-    public String getDateRange(){ return dateRange;}
-    public void setDateRange(String dateRange){ this.dateRange = dateRange;}
 
     public String getProjectDescription(){ return projectDescription;}
     public void setProjectDescription(String projectDescription){ this.projectDescription = projectDescription;}

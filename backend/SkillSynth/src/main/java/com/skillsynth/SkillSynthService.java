@@ -269,11 +269,10 @@ public class SkillSynthService {
        PROJECT SERVICES
     ============================== */
 
-    public Project createProject(String projectName, List<Skill> skills, String dates, String details, int projectLevel) {
+    public Project createProject(String projectName, List<Skill> skills, String details, int projectLevel) {
         System.out.println("\n🟦 createProject() called");
         System.out.println("➡ name: " + projectName);
         System.out.println("➡ skills: " + (skills == null ? "null" : skills.size()));
-        System.out.println("➡ dates: " + dates);
         System.out.println("➡ details: " + details);
         System.out.println("➡ level: " + projectLevel);
 
@@ -306,7 +305,7 @@ public class SkillSynthService {
 
             System.out.println("✅ Managed skills attached: " + managedSkills.size());
 
-            Project project = new Project(projectName, managedSkills, dates, details, projectLevel);
+            Project project = new Project(projectName, managedSkills, details, projectLevel);
             System.out.println("🧱 Saving project entity...");
             Project savedProject = projectRepository.save(project);
             System.out.println("✅ Saved project ID: " + savedProject.getId());
@@ -376,7 +375,6 @@ public class SkillSynthService {
             Project project = new Project(
                     aiProjectName,
                     recommendedSkills,
-                    calculateDateRange(timeAvailability),
                     aiDescription,
                     projectLevel
             );
@@ -391,10 +389,6 @@ public class SkillSynthService {
         }
     }
 
-    private String calculateDateRange(int timeAvailability) {
-        int weeks = Math.max(1, timeAvailability / 5);
-        return "Estimated " + weeks + " week" + (weeks > 1 ? "s" : "") + " duration";
-    }
 
     public Optional<Project> getProjectById(Long id) {
         return projectRepository.findById(id);
@@ -431,7 +425,6 @@ public class SkillSynthService {
         // 2️ Update basic fields
         existing.setName(project.getName());
         existing.setProjectDescription(project.getProjectDescription());
-        existing.setDateRange(project.getDateRange());
         existing.setExperienceLevel(project.getExperienceLevel());
 
         // 3️ Re-attach or create skills

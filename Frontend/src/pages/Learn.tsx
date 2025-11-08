@@ -188,7 +188,7 @@ export default function Learn() {
         };
 
         setProjects([fallback]);
-        showToast("⚠️ AI unavailable — showing default project for this skill.");
+        //showToast("⚠️ AI unavailable — showing default project for this skill.");
         return;
       }
 

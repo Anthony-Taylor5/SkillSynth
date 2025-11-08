@@ -183,7 +183,6 @@ public class SkillSynthController {
         return skillSynthService.createProject(
                 project.getName(),
                 project.getRecommendedSkills(),
-                project.getDateRange(),
                 project.getProjectDescription(),
                 project.getExperienceLevel()
         );

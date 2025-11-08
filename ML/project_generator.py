@@ -134,7 +134,7 @@ class skill_generator:
         # Filter out the skill itself from results
         relevant_skills = []
         for match in query_result.matches:
-            if match.id != main_skill:
+            # if match.id != main_skill:
                 relevant_skills.append({
                     "skill": match.id,
                     "score": match.score,
@@ -168,6 +168,7 @@ class skill_generator:
         relevant_skills = []
         for skill in main_skills:
             relevant_skills.append(self.grab_relevant_skills(skill))
+            relevant_skills.append(skill)
         relevant_skills_names = set()
         for arr in relevant_skills:
             for skill in arr:
@@ -202,7 +203,7 @@ class skill_generator:
                 OUTPUT FORMAT (return in structured JSON-like form):
                 {{
                 "project_name": "string",
-                "description": "string — a concise but detailed explanation of the project, what it does, and how it teaches the skill(s)",
+                "description": "string — a 6-7 sentence detailed explanation of the project, what they should do, what steps they need to take, what technologies to use, what it does, and how it teaches the skill(s)",
                 "experience_level": {experience_level}
                 "time_availability": {time_availability}
                 "learning_resources": [
